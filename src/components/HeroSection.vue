@@ -20,8 +20,8 @@
           :href="link.href"
           class="nav-link flex items-center rounded-full transition-all duration-300"
           :style="{
-            color:      activeSection === link.id || hoveredLink === link.id ? '#ffffff' : '#164C95',
-            background: activeSection === link.id ? '#164C95' : hoveredLink === link.id ? 'rgba(22, 76, 149, 0.15)' : 'transparent',
+            color:      activeSection === link.id || hoveredLink === link.id ? '#ffffff' : 'var(--color-primary)',
+            background: activeSection === link.id ? 'var(--color-primary)' : hoveredLink === link.id ? 'rgba(22, 76, 149, 0.15)' : 'transparent',
           }"
           @click.prevent="scrollTo(link.href)"
           @mouseenter="hoveredLink = link.id"
@@ -229,9 +229,9 @@ onUnmounted(() => {
 .hero-inner    { display: grid; grid-template-columns: 5fr 7fr; align-items: end; gap: 2vw; }
 .hero-logo-wrap { margin-left: -180px; margin-top: -30px; }
 .hero-text-wrap { margin-left: -80px; gap: 0.9vh; }
-.hero-name     { font-family: 'Poppins', sans-serif; font-weight: 700; font-style: italic; color: #164C95; font-size: 100px; line-height: 0.45; white-space: nowrap; }
+.hero-name     { font-family: 'Poppins', sans-serif; font-weight: 700; font-style: italic; color: var(--color-primary); font-size: 100px; line-height: 0.45; white-space: nowrap; }
 .hero-initial  { font-size: 1.2em; }
-.hero-subtitle { font-family: 'Montserrat Alternates', sans-serif; font-weight: 400; color: #6D9FE7; font-size: 60px; white-space: nowrap; }
+.hero-subtitle { font-family: 'Montserrat Alternates', sans-serif; font-weight: 400; color: var(--color-secondary); font-size: 60px; white-space: nowrap; }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .nav-bar { padding: 1.6em 2.5em 0 0; }

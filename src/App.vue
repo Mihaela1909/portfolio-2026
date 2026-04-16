@@ -54,7 +54,7 @@ onUnmounted(() => {
       position: fixed;
       top: 0; left: 0;
       height: 3px;
-      background: #164C95;
+      background: var(--color-primary);
       z-index: 99999;
       pointer-events: none;
       transition: width 0.1s linear;

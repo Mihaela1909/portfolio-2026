@@ -12,7 +12,7 @@
           fontFamily: '\'Poppins\', sans-serif',
           fontWeight: 800,
           fontSize: '60px',
-          color: '#164C95',
+          color: 'var(--color-primary)',
           lineHeight: 1.1,
           opacity: visible ? 1 : 0,
           transform: visible ? 'translateX(0)' : 'translateX(-70px)',
@@ -132,7 +132,7 @@
         font-family: 'Poppins', sans-serif;
         font-weight: 800;
         font-size: 2rem;
-        color: #164C95;
+        color: var(--color-primary);
         line-height: 1.1;
         margin: 0;
       ">{{ lang.name }}:</span>
@@ -143,7 +143,7 @@
         font-family: 'Montserrat Alternates', sans-serif;
         font-weight: 400;
         font-size: 0.85rem;
-        color: #6D9FE7;
+        color: var(--color-secondary);
         margin: 0;
         line-height: 1.2;
       ">{{ lang.level_label }}</span>

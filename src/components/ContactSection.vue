@@ -18,7 +18,7 @@
         fontFamily: 'var(--font-display)',
         fontWeight: 700,
         fontSize: '5rem',
-        color: '#164C95',
+        color: 'var(--color-primary)',
         lineHeight: 1.1,
         marginLeft: '-2rem',
         marginBottom: '3rem',
@@ -44,14 +44,14 @@
           <!-- Email header -->
           <div class="flex items-center gap-3 mb-3">
             <span v-html="emailIcon" style="width:60px;height:60px;display:flex;flex-shrink:0;"></span>
-            <p style="font-family:var(--font-display);font-style:italic;font-weight:700;font-size:20px;color:#164C95;letter-spacing:0.05em;">SEND ME AN EMAIL!</p>
+            <p style="font-family:var(--font-display);font-style:italic;font-weight:700;font-size:20px;color:var(--color-primary);letter-spacing:0.05em;">SEND ME AN EMAIL!</p>
           </div>
 
           <!-- Fields -->
           <div class="flex flex-col gap-1">
 
             <div v-for="field in fields" :key="field.key">
-              <label style="font-family:var(--font-body);font-size:0.75rem;color:#6D9FE7;">{{ field.label }}</label>
+              <label style="font-family:var(--font-body);font-size:0.75rem;color:var(--color-secondary);">{{ field.label }}</label>
               <textarea
                 v-if="field.type === 'textarea'"
                 v-model="form[field.key]"
@@ -77,7 +77,7 @@
               class="send-btn"
               style="
                 align-self:flex-start;
-                background:#164C95;
+                background:var(--color-primary);
                 color:white;
                 font-family:var(--font-display);
                 font-weight:600;
@@ -117,7 +117,7 @@
           >
             <span class="social-icon" v-html="social.icon" style="width:37px;height:37px;display:flex;flex-shrink:0;"></span>
             <div>
-              <p style="font-family:var(--font-body);font-size:0.6rem;color:#6D9FE7;line-height:1;">{{ social.sub }}</p>
+              <p style="font-family:var(--font-body);font-size:0.6rem;color:var(--color-secondary);line-height:1;">{{ social.sub }}</p>
               <p style="font-family:var(--font-body);font-weight:700;font-size:0.7rem;color:#5082C0;line-height:1.2;">{{ social.label }}</p>
             </div>
           </a>
@@ -288,7 +288,7 @@ const socials = [
   background: transparent;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: #164C95;
+  color: var(--color-primary);
   padding: 4px 0;
 }
 
@@ -305,7 +305,7 @@ const socials = [
   left: 0; top: 0;
   height: 100%;
   width: 0;
-  background: #164C95;
+  background: var(--color-primary);
   transition: width 0.35s ease;
 }
 .field-underline.focused::after {

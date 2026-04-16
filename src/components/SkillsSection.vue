@@ -15,7 +15,7 @@
           fontFamily: 'var(--font-display)',
           fontWeight: 700,
           fontSize: '4rem',
-          color: '#164C95',
+          color: 'var(--color-primary)',
           marginTop: '4rem',
           marginBottom: '5rem',
           opacity: headingVisible ? 1 : 0,
@@ -81,14 +81,14 @@
                   font-family: var(--font-display);
                   font-weight: 700;
                   font-size: 2.5rem;
-                  color: #164C95;
+                  color: var(--color-primary);
                   margin-top: 10px;
                 ">{{ skill.name }}</p>
                 <p style="
                   font-family: var(--font-body);
                   font-weight: 400;
                   font-size: 1.45rem;
-                  color: #6D9FE7;
+                  color: var(--color-secondary);
                   line-height: 1.4;
                   margin-bottom: 10px;
                 ">{{ skill.desc }}</p>

@@ -157,8 +157,8 @@
                 <path fill="#164C95" d="m10 15.586l-3.293-3.293l-1.414 1.414L10 18.414l9.707-9.707l-1.414-1.414z"/>
                 <path fill="#164C95" d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2m0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8"/>
               </svg>
-              <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.1rem;color:#164C95;margin:0;">Coming Soon</p>
-              <p style="font-family:'Montserrat',sans-serif;font-size:0.8rem;color:#6D9FE7;margin-top:0.3rem;">This section is currently being worked on.</p>
+              <p style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.1rem;color:var(--color-primary);margin:0;">Coming Soon</p>
+              <p style="font-family:'Montserrat',sans-serif;font-size:0.8rem;color:var(--color-secondary);margin-top:0.3rem;">This section is currently being worked on.</p>
             </div>
             <div v-else-if="currentItems.length" class="xp-grid">
               <div
@@ -570,7 +570,7 @@ onUnmounted(() => {
   font-family: 'Tahoma', 'Arial', sans-serif;
   font-size: 11px;
   user-select: none;
-  border: 3px solid #164C95;
+  border: 3px solid var(--color-primary);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   outline: 1px solid #0d3068;
@@ -586,7 +586,7 @@ onUnmounted(() => {
   background: linear-gradient(180deg,
     #2e7fd9 0%,
     #1a68c8 8%,
-    #164C95 40%,
+    var(--color-primary) 40%,
     #113d7a 100%
   );
   border-top: 1px solid #5aa0e8;
@@ -637,7 +637,7 @@ onUnmounted(() => {
 
 /* Close: light blue #6D9FE7 */
 .xp-btn-close {
-  background: linear-gradient(180deg, #a8c8f8 0%, #6D9FE7 45%, #5888d8 55%, #4070c8 100%);
+  background: linear-gradient(180deg, #a8c8f8 0%, var(--color-secondary) 45%, #5888d8 55%, #4070c8 100%);
   margin-left: 2px;
 }
 
@@ -661,7 +661,7 @@ onUnmounted(() => {
   cursor: default;
   border-radius: 2px;
 }
-.xp-menu-item:hover { background: #164C95; color: white; }
+.xp-menu-item:hover { background: var(--color-primary); color: white; }
 
 /* ── Toolbar ── */
 .xp-toolbar {
@@ -686,7 +686,7 @@ onUnmounted(() => {
   color: #000;
   height: 24px;
 }
-.xp-tool-btn:hover { border-color: #164C95; background: rgba(22, 76, 149, 0.08); }
+.xp-tool-btn:hover { border-color: var(--color-primary); background: rgba(22, 76, 149, 0.08); }
 .xp-tool-label { font-family: 'Montserrat Alternates', sans-serif; font-size: 11px; }
 
 .xp-toolbar-sep {
@@ -771,7 +771,7 @@ onUnmounted(() => {
 }
 
 .xp-sidebar-header {
-  background: linear-gradient(180deg, #2a70c8 0%, #164C95 100%);
+  background: linear-gradient(180deg, #2a70c8 0%, var(--color-primary) 100%);
   color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -793,7 +793,7 @@ onUnmounted(() => {
   gap: 5px;
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 10px;
-  color: #164C95;
+  color: var(--color-primary);
   text-decoration: underline;
   cursor: pointer;
   padding: 2px 3px;
@@ -803,7 +803,7 @@ onUnmounted(() => {
 .xp-sidebar-link:hover { background: rgba(22,76,149,0.1); border-color: #b0cce8; }
 .xp-sidebar-link-active {
   background: rgba(22,76,149,0.15) !important;
-  border-color: #164C95 !important;
+  border-color: var(--color-primary) !important;
   font-weight: 700;
   text-decoration: none;
   color: #0d3068;
@@ -834,7 +834,7 @@ onUnmounted(() => {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 10px;
-  color: #164C95;
+  color: var(--color-primary);
   text-align: center;
   word-break: break-word;
   margin: 0;
@@ -843,7 +843,7 @@ onUnmounted(() => {
 .xp-detail-type {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 10px;
-  color: #6D9FE7;
+  color: var(--color-secondary);
   margin: 0;
 }
 
@@ -907,9 +907,9 @@ onUnmounted(() => {
   cursor: default;
   border: 1px solid transparent;
 }
-.xp-item:hover { background: #ddeeff; border-color: #6D9FE7; }
+.xp-item:hover { background: #ddeeff; border-color: var(--color-secondary); }
 
-.xp-item-selected { background: #164C95 !important; border-color: #164C95 !important; }
+.xp-item-selected { background: var(--color-primary) !important; border-color: var(--color-primary) !important; }
 .xp-item-selected .xp-filename { color: white !important; }
 
 .xp-thumb {
@@ -928,7 +928,7 @@ onUnmounted(() => {
 .xp-filename {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 11px;
-  color: #164C95;
+  color: var(--color-primary);
   text-align: center;
   max-width: 100px;
   word-break: break-word;
@@ -950,14 +950,14 @@ onUnmounted(() => {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 13px;
-  color: #164C95;
+  color: var(--color-primary);
   margin: 0;
 }
 
 .xp-empty-hint {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 11px;
-  color: #6D9FE7;
+  color: var(--color-secondary);
   margin: 0;
 }
 
@@ -1008,7 +1008,7 @@ onUnmounted(() => {
   display: inline-block;
   margin-top: 4px;
   padding: 2px 8px;
-  background: linear-gradient(180deg, #3a80d8 0%, #164C95 100%);
+  background: linear-gradient(180deg, #3a80d8 0%, var(--color-primary) 100%);
   color: white;
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 10px;
@@ -1029,7 +1029,7 @@ onUnmounted(() => {
   font-family: 'Tahoma', 'Arial', sans-serif;
   font-size: 11px;
   user-select: none;
-  border: 3px solid #164C95;
+  border: 3px solid var(--color-primary);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   outline: 1px solid #0d3068;
@@ -1083,7 +1083,7 @@ onUnmounted(() => {
   cursor: pointer;
   padding: 0;
 }
-.xp-viewer-btn:hover:not(:disabled)  { background: linear-gradient(180deg, #fff 0%, #d8eaff 100%); border-color: #164C95; }
+.xp-viewer-btn:hover:not(:disabled)  { background: linear-gradient(180deg, #fff 0%, #d8eaff 100%); border-color: var(--color-primary); }
 .xp-viewer-btn:active:not(:disabled) { background: #c8dcf8; }
 .xp-viewer-btn:disabled { opacity: 0.4; cursor: default; }
 
@@ -1124,14 +1124,14 @@ onUnmounted(() => {
   right: 0;
   z-index: 100000;
   background: white;
-  border-top: 2px solid #164C95;
+  border-top: 2px solid var(--color-primary);
   box-shadow: 0 -4px 24px rgba(22, 76, 149, 0.18);
   max-height: 55vh;
   overflow-y: auto;
 }
 
 .xp-mobile-details-bar {
-  background: linear-gradient(180deg, #2a70c8 0%, #164C95 100%);
+  background: linear-gradient(180deg, #2a70c8 0%, var(--color-primary) 100%);
   color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -1168,7 +1168,7 @@ onUnmounted(() => {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 13px;
-  color: #164C95;
+  color: var(--color-primary);
   margin: 0;
   word-break: break-word;
 }
@@ -1176,7 +1176,7 @@ onUnmounted(() => {
 .xp-mobile-detail-type {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 11px;
-  color: #6D9FE7;
+  color: var(--color-secondary);
   margin: 0;
 }
 
