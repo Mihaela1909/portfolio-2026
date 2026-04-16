@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap');@import './base.css';
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Primary: Poppins bold italic, navy blue for name */
+  --color-primary: #164C95;
+  /* Secondary: Montserrat Alternates regular, light blue for subtitle */
+  --color-secondary: #6D9FE7;
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Montserrat Alternates', sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+  /* Override Tailwind's font-weight reset */
+  
+}
+
+@layer base {
+  button {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+}
+
+@layer components {
+  .btn-action {
+    @apply text-white py-2 px-6 rounded-full transition-all duration-300 hover:opacity-80;
+    background-color: var(--color-primary);
+  }
+
+  .card {
+    @apply bg-white p-4 shadow-lg rounded-2xl flex flex-col gap-4;
+  }
+}
