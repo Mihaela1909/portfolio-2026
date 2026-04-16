@@ -228,7 +228,7 @@ const languages = [
 }
 
 .dl-btn {
-  background-image: url(/button.png);
+  background-image: url('/button.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: transparent;
