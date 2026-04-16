@@ -74,7 +74,6 @@
             <p class="subtitle-reveal hero-subtitle">Multimedia Designer</p>
           </div>
         </div>
-
       </div>
     </div>
 
