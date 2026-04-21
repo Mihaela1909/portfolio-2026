@@ -52,33 +52,32 @@
               }"
             >
               <!-- Shine sweep overlay -->
-              <div class="shine-wrap" style="position: relative; overflow: hidden; border-radius: 12px;">
+              <div class="shine-wrap" style="position: relative; border-radius: 12px; overflow: hidden;">
                 <img
                   :src="item.image"
                   :alt="item.label"
                   class="w-full h-auto"
                   style="object-fit: contain; display: block;"
                 />
+                <!-- Label locked inside the card image -->
+                <p
+                  class="card-label"
+                  style="
+                    position: absolute;
+                    bottom: 18%;
+                    left: 0; right: 0;
+                    text-align: center;
+                    z-index: 10;
+                    font-family: var(--font-display);
+                    font-weight: 800;
+                    font-size: 0.85rem;
+                    color: #ffffff;
+                    letter-spacing: 0.12em;
+                    text-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+                  "
+                >{{ item.label }}</p>
                 <div class="shine" />
               </div>
-
-              <!-- Label -->
-              <p
-                class="card-label"
-                style="
-                  position: absolute;
-                  bottom: 2.7rem;
-                  left: 0; right: 0;
-                  text-align: center;
-                  z-index: 10;
-                  font-family: var(--font-display);
-                  font-weight: 700;
-                  font-size: 1rem;
-                  color: #ffffff;
-                  letter-spacing: 0.12em;
-                  text-shadow: 0px 1.5px 1px rgba(22, 76, 149, 0.5);
-                "
-              >{{ item.label }}</p>
             </div>
 
             <!-- Shadow below the card -->
@@ -107,14 +106,14 @@ import cameraImg  from '@/assets/images/camera.png'
 import webImg     from '@/assets/images/web.png'
 import illImg     from '@/assets/images/ill.png'
 import brandImg   from '@/assets/images/brand.png'
-import miniMeImg      from '@/assets/projects/mini me.png'
-import march12Img     from '@/assets/projects/March_12_Infographic.png'
+import miniMeImg      from '@/assets/projects/mini me.jpg'
+import march12Img     from '@/assets/projects/March_12_Infographic.jpg'
 // #GreenNorgesgade — folder renamed to GreenNorgesgade on disk (# breaks Vite module resolution)
 import gnPdfUrl    from '@/assets/projects/GreenNorgesgade/GreenNorgesgade_Idea_Catalogue.pdf?url'
-import gnPosterImg from '@/assets/projects/GreenNorgesgade/GreenNorgesgade_Poster.png'
-import gnSoMe1Img  from '@/assets/projects/GreenNorgesgade/SoMe_post_1.png'
-import gnSoMe2Img  from '@/assets/projects/GreenNorgesgade/SoMe_post_2.png'
-import gnSoMe3Img  from '@/assets/projects/GreenNorgesgade/SoMe_post_3.png'
+import gnPosterImg from '@/assets/projects/GreenNorgesgade/GreenNorgesgade_Poster.jpg'
+import gnSoMe1Img  from '@/assets/projects/GreenNorgesgade/SoMe_post_1.jpg'
+import gnSoMe2Img  from '@/assets/projects/GreenNorgesgade/SoMe_post_2.jpg'
+import gnSoMe3Img  from '@/assets/projects/GreenNorgesgade/SoMe_post_3.jpg'
 import PortfolioModal from './PortfolioModal.vue'
 
 // ── Helpers ──
@@ -155,7 +154,7 @@ const plantAFlowerDayFolder = {
   files: [
     {
       src: march12Img,
-      name: 'March_12_Infographic.png',
+      name: 'March_12_Infographic.jpg',
       type: 'image',
       description: 'A visually structured infographic created as a content creation exercise at SEA, designed to raise awareness of National Plant a Flower Day on March 12. Developed in the Content Creation class, the piece combines illustrated elements, typography and data visualisation to communicate the significance of the day in an engaging and shareable format.',
     },
@@ -176,25 +175,25 @@ const greenNorgesgadeFolder = {
     },
     {
       src: gnPosterImg,
-      name: 'GreenNorgesgade_Poster.png',
+      name: 'GreenNorgesgade_Poster.jpg',
       type: 'image',
       description: "A promotional poster designed to visually communicate the #GreenNorgesgade campaign concept. Created to accompany the idea catalogue and raise awareness of the green initiative, using environmental imagery and the campaign's hashtag-driven identity to engage the local community.",
     },
     {
       src: gnSoMe1Img,
-      name: 'SoMe_post_1.png',
+      name: 'SoMe_post_1.jpg',
       type: 'image',
       description: 'First of three social media mockups created to promote the #GreenNorgesgade campaign. Shown as a phone screen mockup to demonstrate how the campaign content would appear in a real social media context — designed to drive community engagement around the green street initiative in Esbjerg.',
     },
     {
       src: gnSoMe2Img,
-      name: 'SoMe_post_2.png',
+      name: 'SoMe_post_2.jpg',
       type: 'image',
       description: 'Second social media mockup in the #GreenNorgesgade campaign series. Continues the visual identity of the campaign while varying the content format to maintain engagement across posts.',
     },
     {
       src: gnSoMe3Img,
-      name: 'SoMe_post_3.png',
+      name: 'SoMe_post_3.jpg',
       type: 'image',
       description: 'Third social media mockup in the #GreenNorgesgade campaign series. Completes the three-post series with a consistent visual language, designed to work together as a cohesive campaign set across digital platforms.',
     },
@@ -265,8 +264,8 @@ const internationalDayFolder = {
   description: "A content creation exercise completed as part of the Multimedia Design programme at SEA. Designed two versions of a promotional poster for the university's International Day event — an A4 print format and a web banner format — both created in Adobe Photoshop.",
   files: [
     {
-      src: intlDaySrc('International_Day_A4.png'),
-      name: 'International_Day_A4.png',
+      src: intlDaySrc('International_Day_A4.jpg'),
+      name: 'International_Day_A4.jpg',
       type: 'image',
       description: "A print-ready A4 poster designed for the International Day event at SEA. Created in Adobe Photoshop, the design combines atmospheric cityscape imagery with typographic elements to produce a visually striking poster suited for physical display on campus.",
     },
@@ -289,20 +288,20 @@ const racing230Folder = {
   description: "A complete brand identity project created as a group assignment at SEA — Syddansk Erhvervsakademi. Developed a full visual identity for 230 Racing, a fictional motorsport team, including logo design, promotional materials, merchandise concepts and a functional website. All brand assets were built around a custom illustrated mascot character to create a bold, energetic and consistent brand presence.",
   files: [
     {
-      src: racingSrc('Logo.png'),
-      name: 'Logo.png',
+      src: racingSrc('Logo.jpg'),
+      name: 'Logo.jpg',
       type: 'image',
       description: 'The core brand identity mark for 230 Racing — a custom illustrated mascot character combined with stylized racing numbers, created entirely in Adobe Illustrator. Designed to be versatile across digital and print applications while communicating speed, energy and a bold team personality.',
     },
     {
-      src: racingSrc('Banner.png'),
-      name: 'Banner.png',
+      src: racingSrc('Banner.jpg'),
+      name: 'Banner.jpg',
       type: 'image',
       description: 'A vertical promotional banner designed for event display and physical print use. Created in Adobe Illustrator, it integrates the brand mascot, logo, photography and typographic elements into a cohesive layout that captures the racing spirit of the 230 brand.',
     },
     {
-      src: racingSrc('Website.png'),
-      name: 'Website.png',
+      src: racingSrc('Website.jpg'),
+      name: 'Website.jpg',
       type: 'image',
       description: "A fully designed and functional promotional website for 230 Racing. Features a hero section, rider profiles, upcoming events and social media integration — built to reflect the brand's high-energy identity while providing key information to fans and sponsors.",
     },
@@ -313,14 +312,14 @@ const racing230Folder = {
       description: 'A branded merchandise mockup featuring a t-shirt and cap with the 230 Racing logo applied. Created to demonstrate how the brand identity translates onto physical fan merchandise and team apparel.',
     },
     {
-      src: racingSrc('Merch_2.png'),
-      name: 'Merch_2.png',
+      src: racingSrc('Merch_2.jpg'),
+      name: 'Merch_2.jpg',
       type: 'image',
       description: "A branded tote bag mockup showcasing the 230 Racing mascot logo on a canvas bag. Demonstrates the brand's versatility across everyday lifestyle merchandise beyond racing-specific gear.",
     },
     {
-      src: racingSrc('Merch_3.png'),
-      name: 'Merch_3.png',
+      src: racingSrc('Merch_3.jpg'),
+      name: 'Merch_3.jpg',
       type: 'image',
       description: 'A phone case sticker mockup featuring the 230 Racing logo applied to a device. Shows the brand working at small scale on personal accessories, extending the identity into everyday consumer products.',
     },
@@ -349,52 +348,53 @@ const brothersLionheartFolder = {
       description: "A visual infographic presenting key information about the production in an engaging format. Designed to be shared digitally and printed, balancing data clarity with the campaign's visual identity.",
     },
     {
-      src: blhSrc('Poster.png'),
-      name: 'Poster.png',
+      src: blhSrc('Poster.jpg'),
+      name: 'Poster.jpg',
       type: 'image',
       description: "A promotional poster created for physical display in public spaces. Features the campaign's core visual language — typography, color palette and imagery — to grab attention and communicate the event at a glance.",
     },
     {
-      src: blhSrc('SoMe_post_1.png'),
-      name: 'SoMe_post_1.png',
+      src: blhSrc('SoMe_post_1.jpg'),
+      name: 'SoMe_post_1.jpg',
       type: 'image',
       description: 'Part of a three-post social media series for Instagram and Facebook. Event announcement format — introduces the production with the core campaign visuals.',
     },
     {
-      src: blhSrc('SoMe_post_2.png'),
-      name: 'SoMe_post_2.png',
+      src: blhSrc('SoMe_post_2.jpg'),
+      name: 'SoMe_post_2.jpg',
       type: 'image',
       description: 'Part of a three-post social media series for Instagram and Facebook. Countdown format — builds anticipation leading up to the show date.',
     },
     {
-      src: blhSrc('SoMe_post_3.png'),
-      name: 'SoMe_post_3.png',
+      src: blhSrc('SoMe_post_3.jpg'),
+      name: 'SoMe_post_3.jpg',
       type: 'image',
       description: 'Part of a three-post social media series for Instagram and Facebook. Audience engagement format — designed to encourage sharing and interaction.',
     },
     {
-      src: blhSrc('Stickers_1.png'),
-      name: 'Stickers_1.png',
+      src: blhSrc('Stickers_1.jpg'),
+      name: 'Stickers_1.jpg',
       type: 'image',
       description: 'Branded sticker designs created as supplementary promotional merchandise. Designed to work both digitally and as physical prints, extending the campaign identity into everyday objects.',
     },
     {
-      src: blhSrc('Stickers_2.png'),
-      name: 'Stickers_2.png',
+      src: blhSrc('Stickers_2.jpg'),
+      name: 'Stickers_2.jpg',
       type: 'image',
       description: "Second set of branded sticker designs. Extends the merchandise range while maintaining the campaign's visual consistency.",
     },
     {
-      src: blhSrc('Website.png'),
-      name: 'Website.png',
+      src: blhSrc('Website.jpg'),
+      name: 'Website.jpg',
       type: 'image',
       description: 'A fully functional promotional website built for the theatre production. Includes event information, responsive design, and is developed using HTML, CSS and JavaScript with GitHub for version control.',
       link: { text: 'Visit Live Site', url: 'https://karvin01.github.io/Semester-project-webpage/index.html' },
     },
     {
-      src: blhSrc('Video.mp4'),
+      src: 'https://img.youtube.com/vi/4jDPY7XIhOw/hqdefault.jpg',
       name: 'Video.mp4',
-      type: 'video',
+      type: 'youtube',
+      youtubeUrl: 'https://youtu.be/4jDPY7XIhOw',
       description: 'A short promotional video produced to build anticipation for the winter production. Combines motion graphics, campaign visuals and atmospheric sound design to capture the tone and story of The Brothers Lionheart.',
     },
     {
@@ -457,7 +457,7 @@ onMounted(() => {
 const items = [
   { label: 'PHOTOGRAPHY',   image: cameraImg, images: photographyImages },
   { label: 'PROJECTS',      image: webImg,    images: [
-    { src: miniMeImg, name: 'mini me.png', type: 'image', description: 'A self-portrait illustration created as a character design exercise in the Multimedia Design programme at SEA. Designed entirely in Adobe Illustrator, the task was to recreate yourself as a stylized vector character — developing skills in digital illustration, shape building and working with the Illustrator pen and shape tools to achieve a cohesive personal likeness.' },
+    { src: miniMeImg, name: 'mini me.jpg', type: 'image', description: 'A self-portrait illustration created as a character design exercise in the Multimedia Design programme at SEA. Designed entirely in Adobe Illustrator, the task was to recreate yourself as a stylized vector character — developing skills in digital illustration, shape building and working with the Illustrator pen and shape tools to achieve a cohesive personal likeness.' },
   ], folders: [racing230Folder, brothersLionheartFolder, internationalDayFolder, halloweenDrinksFolder, bugsFolder, greenNorgesgadeFolder, plantAFlowerDayFolder, takaraFolder] },
   { label: 'ILLUSTRATIONS', image: illImg,    images: illustrationImages },
   { label: 'VIDEO',         image: brandImg,  images: [], comingSoon: true },
@@ -520,8 +520,6 @@ const items = [
 /* ── Responsive ── */
 @media (min-width: 769px) and (max-width: 1024px) {
   .col-start-2.col-span-10 h2 { font-size: 2.8rem !important; }
-  /* Lower the label so it sits on the card's bottom banner at scaled-down size */
-  .card-label { font-size: 0.8rem !important; bottom: 1.4rem !important; }
   /* Tighten card gap so 4 cards fit without overflow */
   .grid.grid-cols-4 { gap: 1.2rem !important; }
 }
@@ -531,7 +529,6 @@ const items = [
   .col-start-2.col-span-10 { width: 100% !important; }
   .grid.grid-cols-4 { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
   .col-start-2.col-span-10 h2 { font-size: 2.2rem !important; margin-top: 2rem !important; }
-  .card-label { font-size: 0.8rem !important; bottom: 2rem !important; }
 }
 
 /* ── Shine sweep on hover ── */

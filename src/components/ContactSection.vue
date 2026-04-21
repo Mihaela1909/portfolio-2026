@@ -51,9 +51,10 @@
           <div class="flex flex-col gap-1">
 
             <div v-for="field in fields" :key="field.key">
-              <label style="font-family:var(--font-body);font-size:0.75rem;color:var(--color-secondary);">{{ field.label }}</label>
+              <label :for="field.id" style="font-family:var(--font-body);font-size:0.75rem;color:var(--color-secondary);">{{ field.label }}</label>
               <textarea
                 v-if="field.type === 'textarea'"
+                :id="field.id"
                 v-model="form[field.key]"
                 rows="4"
                 class="form-input"
@@ -62,6 +63,7 @@
               ></textarea>
               <input
                 v-else
+                :id="field.id"
                 v-model="form[field.key]"
                 :type="field.type"
                 class="form-input"
@@ -254,9 +256,9 @@ const sendEmail = async () => {
 }
 
 const fields = [
-  { key: 'name',    label: 'Your Name:',    type: 'text' },
-  { key: 'email',   label: 'Your Email:',   type: 'email' },
-  { key: 'message', label: 'Your Message:', type: 'textarea' },
+  { key: 'name',    id: 'contact-name',    label: 'Your Name:',    type: 'text' },
+  { key: 'email',   id: 'contact-email',   label: 'Your Email:',   type: 'email' },
+  { key: 'message', id: 'contact-message', label: 'Your Message:', type: 'textarea' },
 ]
 
 const emailIcon    = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="#164C95" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 5h16c0.55 0 1 0.45 1 1v12c0 0.55 -0.45 1 -1 1h-16c-0.55 0 -1 -0.45 -1 -1v-12c0 -0.55 0.45 -1 1 -1Z"/><path d="M3 6.5l9 5.5l9 -5.5"/></g></svg>`

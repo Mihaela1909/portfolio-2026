@@ -105,9 +105,10 @@
                     <text x="8" y="48" font-family="Arial" font-weight="800" font-size="13" fill="#c00">PDF</text>
                   </svg>
                 </div>
-                <!-- Video thumbnail -->
-                <div class="xp-detail-thumb" v-else-if="selectedItem.type === 'video'">
-                  <video :src="selectedItem.src" muted preload="metadata" style="max-width:100%;max-height:100%;object-fit:cover;" />
+                <!-- Video / YouTube thumbnail -->
+                <div class="xp-detail-thumb" v-else-if="selectedItem.type === 'video' || selectedItem.type === 'youtube'">
+                  <img v-if="selectedItem.type === 'youtube'" :src="selectedItem.src" alt="YouTube thumbnail" style="max-width:100%;max-height:100%;object-fit:cover;" />
+                  <video v-else :src="selectedItem.src" muted preload="metadata" style="max-width:100%;max-height:100%;object-fit:cover;" />
                 </div>
                 <!-- Image thumbnail -->
                 <div class="xp-detail-thumb" v-else style="background:#e8f0f8;">
@@ -121,7 +122,7 @@
                 </div>
 
                 <p class="xp-detail-name">{{ selectedItem.name }}</p>
-                <p class="xp-detail-type">{{ selectedItem.type === 'folder' ? 'File Folder' : selectedItem.type === 'pdf' ? 'PDF Document' : selectedItem.type === 'video' ? 'Video File' : 'Image File' }}</p>
+                <p class="xp-detail-type">{{ selectedItem.type === 'folder' ? 'File Folder' : selectedItem.type === 'pdf' ? 'PDF Document' : selectedItem.type === 'video' ? 'Video File' : selectedItem.type === 'youtube' ? 'YouTube Video' : 'Image File' }}</p>
 
                 <!-- Open PDF button -->
                 <a
@@ -131,6 +132,15 @@
                   rel="noopener noreferrer"
                   class="xp-detail-link"
                 >Open PDF</a>
+
+                <!-- YouTube link -->
+                <a
+                  v-if="selectedItem.type === 'youtube'"
+                  :href="selectedItem.youtubeUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="xp-detail-link"
+                >Watch on YouTube</a>
 
                 <!-- Live site link (e.g. Website.png) -->
                 <a
@@ -167,7 +177,7 @@
                 class="xp-item"
                 :class="{ 'xp-item-selected': selectedIndex === i }"
                 @click="handleItemClick(i)"
-                @dblclick="item.type === 'folder' ? openFolder(item) : item.type === 'pdf' ? openPdf(item) : openViewer(i)"
+                @dblclick="item.type === 'folder' ? openFolder(item) : item.type === 'pdf' ? openPdf(item) : item.type === 'youtube' ? openYoutube(item) : openViewer(i)"
                 @touchend.prevent="handleTap(i, $event)"
               >
                 <!-- Folder icon -->
@@ -190,6 +200,10 @@
                 <!-- Video thumbnail -->
                 <div class="xp-thumb" v-else-if="item.type === 'video'">
                   <video :src="item.src" muted preload="metadata" draggable="false" style="max-width:100%;max-height:100%;object-fit:cover;" />
+                </div>
+                <!-- YouTube thumbnail -->
+                <div class="xp-thumb" v-else-if="item.type === 'youtube'" style="background:#000;">
+                  <img :src="item.src" alt="YouTube thumbnail" draggable="false" style="max-width:100%;max-height:100%;object-fit:cover;" />
                 </div>
                 <!-- Image thumbnail -->
                 <div class="xp-thumb" v-else style="background:#e8f0f8;">
@@ -326,7 +340,7 @@
       </div>
       <div class="xp-mobile-details-body">
         <p class="xp-mobile-detail-name">{{ selectedItem.name }}</p>
-        <p class="xp-mobile-detail-type">{{ selectedItem.type === 'folder' ? 'File Folder' : selectedItem.type === 'pdf' ? 'PDF Document' : selectedItem.type === 'video' ? 'Video File' : 'Image File' }}</p>
+        <p class="xp-mobile-detail-type">{{ selectedItem.type === 'folder' ? 'File Folder' : selectedItem.type === 'pdf' ? 'PDF Document' : selectedItem.type === 'video' ? 'Video File' : selectedItem.type === 'youtube' ? 'YouTube Video' : 'Image File' }}</p>
         <a
           v-if="selectedItem.type === 'pdf'"
           :href="selectedItem.src"
@@ -335,6 +349,14 @@
           class="xp-detail-link"
           style="align-self:flex-start;"
         >Open PDF</a>
+        <a
+          v-if="selectedItem.type === 'youtube'"
+          :href="selectedItem.youtubeUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="xp-detail-link"
+          style="align-self:flex-start;"
+        >Watch on YouTube</a>
         <a
           v-if="selectedItem.link"
           :href="selectedItem.link.url"
@@ -386,6 +408,10 @@ const viewableItems = computed(() =>
 
 const openPdf = (item) => {
   if (item.src) window.open(item.src, '_blank', 'noopener,noreferrer')
+}
+
+const openYoutube = (item) => {
+  if (item.youtubeUrl) window.open(item.youtubeUrl, '_blank', 'noopener,noreferrer')
 }
 
 const selectedItem = computed(() =>
@@ -478,6 +504,7 @@ const handleTap = (i, event) => {
     const item = currentItems.value[i]
     if (item?.type === 'folder') openFolder(item)
     else if (item?.type === 'pdf') openPdf(item)
+    else if (item?.type === 'youtube') openYoutube(item)
     else openViewer(i)
   } else {
     // Single tap: select and show details
