@@ -37,7 +37,7 @@
 
     <!-- Full-bleed cloud background with parallax -->
     <img
-      src="@/assets/images/cloudy.jpg"
+      src="@/assets/images/cloudy.webp"
       alt="Sky background"
       width="1920"
       height="1080"

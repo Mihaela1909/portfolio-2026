@@ -3,7 +3,7 @@
 
   <!-- Background -->
   <img
-    src="@/assets/images/fot.jpg"
+    src="@/assets/images/fot.webp"
     alt="Sky background"
     width="1920"
     height="1080"
