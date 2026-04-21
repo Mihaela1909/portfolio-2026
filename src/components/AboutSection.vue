@@ -26,6 +26,8 @@
   <img
   src="@/assets/images/id.png"
   alt="ID Card"
+  width="500"
+  height="700"
   :class="visible ? 'card-drop' : 'card-hidden'"
   style="
     width: 90%;

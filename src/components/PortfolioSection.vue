@@ -56,6 +56,8 @@
                 <img
                   :src="item.image"
                   :alt="item.label"
+                  width="auto"
+                  height="auto"
                   class="w-full h-auto"
                   style="object-fit: contain; display: block;"
                 />

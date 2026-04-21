@@ -5,6 +5,8 @@
   <img
     src="@/assets/images/fot.jpg"
     alt="Sky background"
+    width="1920"
+    height="1080"
     class="contact-bg"
     style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;min-height:100%;"
   />
@@ -138,7 +140,7 @@
       <!-- Logo + name with shine -->
       <div class="col-span-4 flex items-center gap-3">
         <div class="logo-shine-wrap" style="display:flex;align-items:center;gap:0.75rem;position:relative;overflow:hidden;border-radius:4px;cursor:default;">
-          <img :src="whiteLogo" alt="MH Logo" style="height:58px;width:auto;object-fit:contain;position:relative;z-index:1;" />
+          <img :src="whiteLogo" alt="MH Logo" width="auto" height="58" style="height:58px;width:auto;object-fit:contain;position:relative;z-index:1;" />
           <div class="flex flex-col" style="gap:0;line-height:1.1;margin-top:1.8rem;position:relative;z-index:1;">
             <p style="font-family:var(--font-display);font-weight:700;font-style:italic;color:white;font-size:0.95rem;margin:0;padding:0;"><span style="font-size:1.2em;">M</span>ihaela <span style="font-size:1.2em;">H</span>ioara</p>
             <p style="font-family:var(--font-body);font-size:0.7rem;color:rgba(255,255,255,0.7);margin:0;padding:0;">Multimedia Designer</p>

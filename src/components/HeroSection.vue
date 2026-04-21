@@ -39,6 +39,8 @@
     <img
       src="@/assets/images/cloudy.jpg"
       alt="Sky background"
+      width="1920"
+      height="1080"
       class="absolute inset-0 w-full h-full object-cover object-top cloud-drift"
       :style="{ transform: `scale(1.15) translateX(${cloudDriftOffset}%) translateY(${parallaxY}px)` }"
     />
@@ -56,6 +58,8 @@
             <img
               src="@/assets/images/logo.png"
               alt="MH Logo"
+              width="558"
+              height="370"
               class="logo-float object-contain"
               style="width: 100%; height: 100%; object-fit: contain;"
             />

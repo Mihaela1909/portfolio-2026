@@ -115,7 +115,6 @@
                   <img
                     :src="selectedItem.src"
                     :alt="selectedItem.name"
-                    loading="lazy"
                     style="filter:blur(8px);transition:filter 0.4s ease;"
                     @load="$event.target.style.filter='none'"
                   />
@@ -211,7 +210,6 @@
                     :src="item.src"
                     :alt="item.name"
                     draggable="false"
-                    loading="lazy"
                     style="filter:blur(8px);transition:filter 0.4s ease;"
                     @load="$event.target.style.filter='none'"
                   />
@@ -291,7 +289,6 @@
           :alt="viewerImage.name"
           class="xp-viewer-img"
           draggable="false"
-          loading="lazy"
           :style="{
             transform:  viewerImgTransform,
             transition: isPanning ? 'none' : (viewerImageLoaded ? 'transform 0.25s ease' : 'transform 0.25s ease, filter 0.4s ease'),
@@ -1133,13 +1130,18 @@ onUnmounted(() => {
 @media (max-width: 860px) {
   .xp-window {
     width: calc(100vw - 16px) !important;
+    height: calc(100vh - 16px) !important;
     left: 8px !important;
     top: 8px !important;
-    min-height: calc(100vh - 16px);
   }
   .xp-sidebar { display: none; }
   .xp-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
-  .xp-viewer-window { width: calc(100vw - 16px) !important; left: 8px !important; top: 8px !important; }
+  .xp-viewer-window {
+    width: calc(100vw - 16px) !important;
+    height: calc(100vh - 16px) !important;
+    left: 8px !important;
+    top: 8px !important;
+  }
 }
 
 /* ── Mobile details bottom panel ── */
